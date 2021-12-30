@@ -22,11 +22,6 @@ Create two Dockerfiles: one for a standard workbench, one for JupyterLab
     # Upgrade packages in the base image
     RUN apt-get update && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
     #Install Julia
-    RUN export J_VERSION=$(curl -s "https://api.github.com/repos/JuliaLang/julia/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
-    ENV JULIA_VERSION=$J_VERSION
-    RUN export J_M_VERSION=$(echo $JULIA_VERSION | grep -Po "^[0-9]+.[0-9]+")
-    ENV JULIA_MINOR_VERSION=$J_M_VERSION
-    RUN curl -o julia.tar.gz "https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_MINOR_VERSION}/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" > julia.tar.gz
     RUN mkdir /opt/julia
     ADD julia.tar.gz /opt/julia
     RUN ln -s /opt/julia/julia-${JULIA_VERSION}/bin/* /usr/local/bin
@@ -46,11 +41,6 @@ Create two Dockerfiles: one for a standard workbench, one for JupyterLab
     # Upgrade packages in the base image
     RUN apt-get update && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
     #Install Julia
-    RUN export J_VERSION=$(curl -s "https://api.github.com/repos/JuliaLang/julia/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
-    ENV JULIA_VERSION=$J_VERSION
-    RUN export J_M_VERSION=$(echo $JULIA_VERSION | grep -Po "^[0-9]+.[0-9]+")
-    ENV JULIA_MINOR_VERSION=$J_M_VERSION
-    RUN curl -o julia.tar.gz "https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_MINOR_VERSION}/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" > julia.tar.gz
     RUN mkdir /opt/julia
     # before ADDing, make sure the file to be added is at the file path
     ADD julia.tar.gz /opt/julia
