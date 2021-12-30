@@ -63,7 +63,16 @@ Create two Dockerfiles: one for a standard workbench, one for JupyterLab
 
 
 ## Build Docker Image
-
+To build the Docker image using the ADD command, you will need to have the target of the ADD at the path defined in the ADD statement. If a full path is not provided, the ADD target should be present in the current directory. To obtain the current version of Julia, use these commands:
+```bash
+JULIA_VERSION=$(curl -s "https://api.github.com/repos/JuliaLang/julia/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
+```
+```bash
+JULIA_MINOR_VERSION=$(echo $JULIA_VERSION | grep -Po "^[0-9]+.[0-9]+")
+```
+```bash
+curl -o julia.tar.gz "https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_MINOR_VERSION}/julia-${JULIA_VERSION}-linux-x86_64.tar.gz"
+```
 
 ## Push Docker Image to a Repository
 
