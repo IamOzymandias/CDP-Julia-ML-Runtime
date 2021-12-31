@@ -89,6 +89,7 @@ docker push repository_name/cdsw-julia-jupyter:1.1
 ```
 ## Add the Custom ML Runtime 
 
+![image](images/cdsw-ml-runtimes.png)
 
 ## Examples for Usage
 
