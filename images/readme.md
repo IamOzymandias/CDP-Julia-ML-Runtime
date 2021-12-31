@@ -1,1 +1,1 @@
-images in theis folder
+images in this folder
