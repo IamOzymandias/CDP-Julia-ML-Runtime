@@ -87,8 +87,14 @@ Once the image is built, push it to a personal or organization's repository. The
 docker push repository_name/cdsw-julia-jupyter:1.1
 ```
 ## Add the Custom ML Runtime 
-
+Once the Docker image has been built and pushed, it can be added to the Runtime Catalog.
 ![image](images/cdsw-ml-runtimes.png)
+
+1. Select **Add Runtime**
+2. **Validate** the URL for your custom runtime image
+    ![image](images/add-runtime.png)
+3. Confirm metadata and select **Add to Catalog**
+    ![image](images/confirm-metadata.png)
 
 ## Examples for Usage
 
