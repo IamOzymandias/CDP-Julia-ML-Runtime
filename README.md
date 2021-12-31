@@ -60,7 +60,6 @@ https://docs.cloudera.com/machine-learning/cloud/runtimes/topics/ml-metadata-for
     LABEL com.cloudera.ml.runtime.edition=$ML_RUNTIME_EDITION com.cloudera.ml.runtime.full-version=$ML_RUNTIME_FULL_VERSION com.cloudera.ml.runtime.short-version=$ML_RUNTIME_SHORT_VERSION com.cloudera.ml.runtime.maintenance-version=$ML_RUNTIME_MAINTENANCE_VERSION com.cloudera.ml.runtime.description=$ML_RUNTIME_DESCRIPTION
     ```
 
-
 ## Build Docker Image
 To build the Docker image using the ADD command, you will need to have the target of the ADD at the path defined in the ADD statement. If a full path is not provided, the ADD target should be present in the current directory. To obtain the current version of Julia, use these commands:
 
