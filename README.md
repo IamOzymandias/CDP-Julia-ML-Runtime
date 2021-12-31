@@ -11,12 +11,17 @@ Cloudera Machine Learning environments (CDSW, CML) utilize Docker images to prov
     - Examples for usage
 
 ## Construct the Dockerfile
-Create two Dockerfiles: one for a standard workbench, one for JupyterLab
+Create two Dockerfiles: one for a standard workbench, one for JupyterLab. The images are built starting from a base Cloduera-provided image. In CDSW the images are located on the CDSW nodes. Listing the Docker images from the CDSW master node will display the information needed to select a base image.
+```bash
+docker images
+```
+![image](images/cdsw-docker-images.png)
+
 - Standard Workbench ML runtime
     ```bash
     # Dockerfile
     # Specify an ML Runtime base image
-    FROM docker.repository.cloudera.com/cdsw/ml-runtime-workbench-python3.7-standard:2021.09.1-b5
+    FROM docker.repository.cloudera.com/cdsw/ml-runtime-workbench-python3.9-standard:2021.09.1-b5
     # Install ImageAI and dependenices in the new image
     RUN apt-get update && apt-get install curl gzip
     # Upgrade packages in the base image
@@ -32,6 +37,10 @@ Create two Dockerfiles: one for a standard workbench, one for JupyterLab
     ```
 
 - JupyterLab ML runtime
+
+The Metadata section is important. It can be maually entered or the values can be dynamically updated using environment variables. See this Cloudera page for more information:
+https://docs.cloudera.com/machine-learning/cloud/runtimes/topics/ml-metadata-for-custom-runtimes.html
+
     ```bash
     # Dockerfile
     # Specify an ML Runtime base image
@@ -70,7 +79,7 @@ curl -o julia.tar.gz "https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_M
 
 Build the image
 ```bash
-docker build --network=host -t repository_name/cdsw-julia-jupyter:1. . -f Dockerfile
+docker build --network=host -t repository_name/cdsw-julia-jupyter:1.1 . -f Dockerfile
 ```
 ## Push Docker Image to a Repository
 Once the image is built, push it to a personal or organization's repository. The following is a simple example:
