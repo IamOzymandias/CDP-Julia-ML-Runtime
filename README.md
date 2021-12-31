@@ -40,7 +40,6 @@ docker images
 
 The Metadata section is important. It can be maually entered or the values can be dynamically updated using environment variables. See this Cloudera page for more information:
 https://docs.cloudera.com/machine-learning/cloud/runtimes/topics/ml-metadata-for-custom-runtimes.html
-
     ```bash
     # Dockerfile
     # Specify an ML Runtime base image
