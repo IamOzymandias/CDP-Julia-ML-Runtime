@@ -8,6 +8,7 @@ Cloudera Machine Learning environments (CDSW, CML) utilize Docker images to prov
     - Build Docker image
     - Push Docker image to a repository
     - Add the custom ML runtime
+    - Install Julia packages and iJulia
     - Examples for usage
 
 ## Construct the Dockerfile
