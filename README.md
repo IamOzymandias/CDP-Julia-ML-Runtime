@@ -102,6 +102,7 @@ Example notebooks are based on Data Science Tutorials created by [Julia AI GitHu
 
 To use the sample notebooks
 1. Create a new **Project** using the Git tab
+
 ![image](images/new-project.png)
  
 2. Create a new **Session** and select the following options
@@ -111,10 +112,13 @@ To use the sample notebooks
     - **Enable Spark**: *Select Spark of choice*
     - **Resource Profile**: *Select resources needed*
  
-3. Select **Start Session**
+3. Select **Start Session**ß
+
 ![image](images/new-session.png)
  
 
-4. Open a Terminal Access session and execute the following script to update Julia package registry and add the Julia kernel
+4. When JupyterLab opens, there will be no Julia kernel listed. To add the Julia Kernel, open a **Terminal Access** session and execute the following script to update Julia package registry and add the Julia kernel
    ```julia ./project-files/iJulia.jl```
 
+5. Retun to the JupyterLab Launcher tab. The Julia kernl options are now available
+6. Click into the ```project-files``` folder and open a sample notebook
