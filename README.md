@@ -98,4 +98,20 @@ Once the Docker image has been built and pushed, it can be added to the Runtime 
     ![image](images/confirm-metadata.png)
 
 ## Examples for Usage
+Example notebooks are based on Data Science Tutorials created by [Julia AI GitHub](https://github.com/Juliaai) and located here [https://juliaai.github.io/DataScienceTutorials.jl](https://juliaai.github.io/DataScienceTutorials.jl/)
+
+To use the sanple notebooks
+1. Create a new **Project** using the Git tab
+![image](images/new-project.png)
+2. Create a new **Session** and select the following options
+    **Editor**: JupyterLab
+    **Kernel**: Python 3.9
+    **Edition**: Julia with JupyterLab Edition
+    **Enable Spark**: *Select Spark of choice*
+    **Resource Profile**: *Select resources needed*
+3. Select **Start Session**
+![image](images/new-session.png)
+
+4. Open a Terminal Access session and execute the following script to update Julia package registry and add the Julia kernel
+   ```julia ./project-files/iJulia.jl```
 
