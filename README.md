@@ -112,7 +112,7 @@ To use the sample notebooks
     - **Enable Spark**: *Select Spark of choice*
     - **Resource Profile**: *Select resources needed*
  
-3. Select **Start Session**ß
+3. Select **Start Session**
 
 ![image](images/new-session.png)
  
