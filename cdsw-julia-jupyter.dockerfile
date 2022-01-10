@@ -17,5 +17,5 @@ ADD julia.tar.gz /opt/julia
 RUN ln -s /opt/julia/julia-1.7.1/bin/* /usr/local/bin
 RUN rm -rf julia.tar.gz
 # Override Runtime label and environment variables metadata
-ENV ML_RUNTIME_EDITION="Julia Edition" ML_RUNTIME_SHORT_VERSION="1" ML_RUNTIME_MAINTENANCE_VERSION="2" ML_RUNTIME_FULL_VERSION="1.2" ML_RUNTIME_DESCRIPTION="This runtime includes Julia"
+ENV ML_RUNTIME_EDITION="Julia with JupyterLab Edition" ML_RUNTIME_SHORT_VERSION="1" ML_RUNTIME_MAINTENANCE_VERSION="2" ML_RUNTIME_FULL_VERSION="1.2" ML_RUNTIME_DESCRIPTION="This runtime includes Julia"
 LABEL com.cloudera.ml.runtime.edition=$ML_RUNTIME_EDITION com.cloudera.ml.runtime.full-version=$ML_RUNTIME_FULL_VERSION com.cloudera.ml.runtime.short-version=$ML_RUNTIME_SHORT_VERSION com.cloudera.ml.runtime.maintenance-version=$ML_RUNTIME_MAINTENANCE_VERSION com.cloudera.ml.runtime.description=$ML_RUNTIME_DESCRIPTION
